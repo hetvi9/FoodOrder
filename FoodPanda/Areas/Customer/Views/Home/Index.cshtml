@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Product>
+
+
+@{
+    ViewData["Title"] = "Home";
+}
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+<!-- choose one -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<h3 style="text-align:center">Popular Restaurents</h3>
+<div class="row">
+    @foreach (var obj in Model)
+    {
+        <div class="__area text-center col-md-4 mb-3">
+            <a href="#" class="__card">
+                <i class="la la-heart-o"></i>
+                <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+                <div class="__card_detail text-left">
+                    <h4>@obj.Restaurant.RestaurantName</h4>
+
+                    <div class="__type">
+                        <span href="#Italian">Italian</span>
+                        <span href="#Vegetarian">Vegetarian</span>
+                        <span href="#Pizza">@obj.Restaurant.Address</span>
+
+                    </div>
+                    <div class="__detail">
+                        <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.Restaurant.RestaurantRating</span>
+                    </div>
+                </div>
+            </a>
+        
+        </div>
+    }
+</div>
+
+<h3 style="text-align:center;margin-bottom:3rem">Available Food Types</h3>
+
+<div class="row">
+    @foreach (var obj in Model)
+    {
+        <div class="__area text-center col-md-4 mb-3">
+            <a href="#" class="__card">
+                <i class="la la-heart-o"></i>
+                @*<img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />*@
+                <div class="__card_detail text-left">
+                    <h4>@obj.FoodCatagory.FoodCatagoryType</h4>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+@*food item*@
+<h3 style="text-align:center">Trending Foods</h3>
+<div class="row">
+    @foreach (var obj in Model)
+    {
+        <input asp-for="@obj.Id" hidden />
+        <input asp-for="@obj.ImageUrl" hidden />
+        <div class="__area text-center col-md-4 mb-3">
+            <a href="#" class="__card">
+                <i class="la la-heart-o"></i>
+                <img src="@obj.ImageUrl" class="img-fluid __img" />
+                <div class="__card_detail">
+                    
+                        <h4 class="d-flex justify-content-around">
+                            @obj.ProductName
+
+                        </h4>
+                   
+                     <div>
+                        @obj.Price.ToString("0.00")
+                     </div>
+                       
+                    <div>
+                        
+                        <p>@obj.Description</p>
+                    </div>
+                  <div class="__type">
+                        
+                        <span href="#Pizza">@obj.FoodCatagory.FoodCatagoryType</span>
+
+                    </div>
+                    <div>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@obj.Id">
+                            Details
+                        </a>
+                    </div>
+                    @* <div class="__detail">
+                        <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.RestaurantRating</span>
+                    </div>*@
+                </div>
+            </a>
+        
+        </div>
+    }
+</div>
+
+

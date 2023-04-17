@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Restaurant>
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+<!-- choose one -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<h2 style="text-align:center;color:#6777ef">Restaurants</h2>
+<div style="text-align:right">
+    <a asp-action="Create" asp-controller="Restaurant" class="btn btn-default" style="color:#fd723d;background-color:#f0f3ff;"><h5>+ Add Restaurant</h5></a>
+
+</div>
+
+<div class="row">
+    @foreach (var obj in Model)
+    {
+        <div class="__area text-center col-md-4 mb-3">
+            <a href="#" class="__card">
+                <i class="la la-heart-o"></i>
+                <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+                <div class="__card_detail text-left">
+                    <h4>@obj.RestaurantName</h4>
+
+                    <div class="__type">
+                        <span href="#Italian">Italian</span>
+                        <span href="#Vegetarian">Vegetarian</span>
+                        <span href="#Pizza">@obj.Address</span>
+
+                    </div>
+                    <div class="__detail">
+                        <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.RestaurantRating</span>
+                    </div>
+                </div>
+            </a>
+        <div class="d-flex justify-content-center ">
+            <a asp-action="Edit" asp-controller="Restaurant" asp-route-id="@obj.RestaurantId" class="btn btn-primary btn-lg mr-4" >Edit</a>
+                <a asp-action="Delete" asp-controller="Restaurant" asp-route-id="@obj.RestaurantId" class="btn btn-danger btn-lg mr-4">Delete</a>
+
+        </div>
+        </div>
+    }
+</div>
+
+@*<div class="row">
+    <div class="__area text-center col-md-4">
+        <a href="#" class="__card">
+            <i class="la la-heart-o"></i>
+            <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+            <div class="__card_detail text-left">
+                <h4>Fiorella</h4>
+                
+                <div class="__type">
+                    <span href="#Italian">Italian</span>
+                    <span href="#Vegetarian">Vegetarian</span>
+                    <span href="#Pizza">Pizza</span>
+                    
+                </div>
+                <div class="__detail">
+                    <i class="fa fa-star-o" aria-hidden="true"></i><span>5.0</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- 2nd card -->
+    <div class="__area text-center col-md-4">
+        <a href="#" class="__card">
+            <button class="__favorit"><i class="la la-heart-o"></i></button>
+            <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+            <div class="__card_detail text-left">
+                <h4>Fiorella</h4>
+              
+
+                <div class="__type">
+                    <span href="#Italian">Italian</span>
+                    <span href="#Vegetarian">Vegetarian</span>
+                    <span href="#Pizza">Pizza</span>
+                   
+                </div>
+                <div class="__detail">
+                    <i class="fa fa-star-o" aria-hidden="true"></i><span>5.0</span>
+                </div>
+            </div>
+        </a>
+    </div>
+      <div class="__area text-center col-md-4">
+        <a href="#" class="__card">
+            <button class="__favorit"><i class="la la-heart-o"></i></button>
+            <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+            <div class="__card_detail text-left">
+                <h4>Fiorella</h4>
+              
+
+                <div class="__type">
+                    <span href="#Italian">Italian</span>
+                    <span href="#Vegetarian">Vegetarian</span>
+                    <span href="#Pizza">Pizza</span>
+                   
+                </div>
+                <div class="__detail">
+                    <i class="fa fa-star-o" aria-hidden="true"></i><span>5.0</span>
+                </div>
+            </div>
+        </a>
+    </div>  <div class="__area text-center col-md-4">
+        <a href="#" class="__card">
+            <button class="__favorit"><i class="la la-heart-o"></i></button>
+            <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+            <div class="__card_detail text-left">
+                <h4>Fiorella</h4>
+
+
+                <div class="__type">
+                    <span href="#Italian">Italian</span>
+                    <span href="#Vegetarian">Vegetarian</span>
+                    <span href="#Pizza">Pizza</span>
+
+                </div>
+                <div class="__detail">
+                    <i class="fa fa-star-o" aria-hidden="true"></i><span>5.0</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--   3rd card -->
+    <div class="__area text-center col-md-4">
+        <a href="#" class="__card">
+            <button class="__favorit"><i class="la la-heart-o"></i></button>
+            <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+            <div class="__card_detail text-left">
+                <h4>Fiorella</h4>
+                
+                <div class="__type">
+                    <span href="#Italian">Italian</span>
+                    <span href="#Vegetarian">Vegetarian</span>
+                    <span href="#Pizza">Pizza</span>
+                    
+                </div>
+                <div class="__detail">
+                    <i class="fa fa-star-o" aria-hidden="true"></i><span>5.0</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>*@
+

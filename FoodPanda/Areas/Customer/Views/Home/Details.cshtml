@@ -1,0 +1,60 @@
+﻿@model ShoppingCart
+
+
+<form method="post">
+    @*<input hidden asp-for="ProductId" />*@
+        <div class="card  container pt-4">
+        <div class="card-header bg-primary text-light ml-0  row ">
+            <div class="col-12 col-md-6">
+                <h1 class="text-white-50">@Model.Product.ProductName</h1>
+                <p class="text-warning">by @Model.Product.Restaurant.RestaurantName</p>
+            </div>
+            <div class="col-12 col-md-6 text-end pt-4">
+                <span class="badge bg-info pt-2" style="height:30px;">@Model.Product.FoodCatagory.FoodCatagoryType</span>
+                <span class="badge bg-warning pt-2" style="height:30px;">@Model.Product.Restaurant.RestaurantRating</span>
+            </div>
+        </div>
+        <div class="card-body row container">
+            <div class="container rounded p-2">
+                <div class="row d-flex  align-items-center">
+                    <div class="col-6 col-lg-6 d-flex " style="display:flex">
+                        <img src="@Model.Product.ImageUrl" width="100%" class="rounded" />
+                    </div>
+                    <div class="col-6 col-lg-6 ">
+
+                        <div class="row pl-3 mb-3">
+                            <h5 class="text-muted">@Model.Product.Description</h5>
+                        </div>
+                       
+                       
+                        <div class="row text-center pl-3 mb-3" style="color:maroon; font-weight:bold">
+                            <div class="p-1 col-4 mb-3 bg-secondary">
+                                <div>Price</div>
+                            </div>
+                            <div class="p-1 col-4 mb-3 bg-secondary">
+                                <div>@Model.Product.Price.ToString("c")</div>
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="row pl-3 mb-3">
+                            <div class="col-4 text-primary"><h6 style="color:black">Quantity</h6></div>
+                            <div class="col-4"><input asp-for="Count" class="form-control" /></div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-12 col-md-6 pb-1">
+                    <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
+                </div>
+                <div class="col-12 col-md-6 pb-1">
+                    <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

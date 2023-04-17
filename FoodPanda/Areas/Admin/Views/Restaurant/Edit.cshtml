@@ -1,0 +1,55 @@
+﻿@model Restaurant
+@{
+    ViewData["Title"] = "Edit Restaurant";
+}
+
+<div class="container px-5">
+    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" asp-action="Edit">
+        <input asp-for="RestaurantId" hidden />
+        <div class="mb-3">
+            <label class="form-label" asp-for="RestaurantName">Restaurant Name</label>
+            <input asp-for="RestaurantName" class="form-control" id="restaurantName" type="text" data-sb-validations="required" />
+            <span class="text-danger" asp-validation-for="RestaurantName"></span>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="Address">Address</label>
+            <textarea asp-for="Address" class="form-control" id="address" type="text" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <span class="text-danger" asp-validation-for="Address"></span>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="RestaurantRating">Rating</label>
+            <input asp-for="RestaurantRating" class="form-control" id="rating" type="number"  data-sb-validations="required" />
+            <span class="text-danger" asp-validation-for="RestaurantRating"></span>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label" asp-for="RestaurantImage">Image</label>
+            <input asp-for="RestaurantImage" class="form-control" id="image" type="file" data-sb-validations="required" />
+            <span class="text-danger" asp-validation-for="RestaurantImage"></span>
+
+        <div class="d-flex">
+            <button class="btn btn-primary btn-lg mr-4" id="submitButton" type="submit">Update</button>
+
+            
+        </div>
+
+        </div>
+       @* <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Edited Restaurent Successfully!!</div>
+                 </div>
+        </div>*@
+       @* <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div>*@
+    </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+@section Scripts
+{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}
