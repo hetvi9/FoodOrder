@@ -12,6 +12,7 @@ namespace FoodPanda.DataAccess.Repository.IRepository
         IFoodCatagoryRepository FoodCatagory { get; }
 
         IProductRepository Product { get; }
+        ICompanyRepository Company { get; } 
 
         void Save();
     }

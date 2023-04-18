@@ -17,11 +17,12 @@ namespace FoodPanda.DataAccess.Repository
             Restaurant = new RestaurantRepository(_db);
             FoodCatagory = new FoodCatagoryRepository(_db);
             Product = new ProductRepository(_db);
+            Company = new ComapnyRepository(_db);
         }
         public IRestaurantRepository Restaurant { get; private set; }
          public IFoodCatagoryRepository FoodCatagory { get; private set; }
         public IProductRepository Product { get; private set; }
-
+        public ICompanyRepository Company { get; private set; } 
 
         public void Save()
         {

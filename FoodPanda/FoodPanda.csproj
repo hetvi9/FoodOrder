@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoodPanda.DataAccess\FoodPanda.DataAccess.csproj" />
+    <ProjectReference Include="..\FoodPanda.Utility\FoodPanda.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
