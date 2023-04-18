@@ -14,6 +14,10 @@ namespace FoodPanda.DataAccess
         public DbSet<Restaurant> Restaurant { get; set; }   
        public DbSet<FoodCatagory> FoodCatagorys { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Company> Companies { get; set; }
+
+
 
     }
 }
