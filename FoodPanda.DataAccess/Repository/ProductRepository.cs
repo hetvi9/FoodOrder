@@ -29,7 +29,7 @@ namespace FoodPanda.DataAccess.Repository
                     objFromDb.Description = obj.Description;
                     objFromDb.RestaurantId = obj.RestaurantId;
                     objFromDb.FoodCatagoryId = obj.FoodCatagoryId;
-                    if (obj.ImageUrl != obj.ImageUrl)
+                    if (objFromDb.ImageUrl != obj.ImageUrl)
                     {
                         objFromDb.ImageUrl = obj.ImageUrl;
                     }

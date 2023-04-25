@@ -12,7 +12,12 @@ namespace FoodPanda.DataAccess.Repository.IRepository
         IFoodCatagoryRepository FoodCatagory { get; }
 
         IProductRepository Product { get; }
-        ICompanyRepository Company { get; } 
+        ICompanyRepository Company { get; }
+        IShoppingCartRepository ShoppingCart { get; }
+        IApplicationUserRepository ApplicationUser { get; }
+        IOrderHeaderRepository OrderHeader { get; }
+        IOrderDetailRepository OrderDetail { get; }
+
 
         void Save();
     }
