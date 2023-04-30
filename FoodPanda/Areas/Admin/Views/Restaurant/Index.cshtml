@@ -16,15 +16,15 @@
     @foreach (var obj in Model)
     {
         <div class="__area text-center col-md-4 mb-3">
-            <a href="#" class="__card">
+            <a  class="__card">
                 <i class="la la-heart-o"></i>
-                <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
+                
                 <div class="__card_detail text-left">
                     <h4>@obj.RestaurantName</h4>
 
                     <div class="__type">
-                        <span href="#Italian">Italian</span>
-                        <span href="#Vegetarian">Vegetarian</span>
+                       
+                        <span href="#Vegetarian">@obj.RestaurantImage</span>
                         <span href="#Pizza">@obj.Address</span>
 
                     </div>

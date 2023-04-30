@@ -8,77 +8,42 @@
 <!-- choose one -->
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<h3 style="text-align:center">Popular Restaurents</h3>
-<div class="row">
-    @foreach (var obj in Model)
-    {
-        <div class="__area text-center col-md-4 mb-3">
-            <a href="#" class="__card">
-                <i class="la la-heart-o"></i>
-                <img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />
-                <div class="__card_detail text-left">
-                    <h4>@obj.Restaurant.RestaurantName</h4>
 
-                    <div class="__type">
-                        <span href="#Italian">Italian</span>
-                        <span href="#Vegetarian">Vegetarian</span>
-                        <span href="#Pizza">@obj.Restaurant.Address</span>
-
-                    </div>
-                    <div class="__detail">
-                        <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.Restaurant.RestaurantRating</span>
-                    </div>
-                </div>
-            </a>
-        
-        </div>
-    }
-</div>
-
-<h3 style="text-align:center;margin-bottom:3rem">Available Food Types</h3>
-
-<div class="row">
-    @foreach (var obj in Model)
-    {
-        <div class="__area text-center col-md-4 mb-3">
-            <a href="#" class="__card">
-                <i class="la la-heart-o"></i>
-                @*<img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />*@
-                <div class="__card_detail text-left">
-                    <h4>@obj.FoodCatagory.FoodCatagoryType</h4>
-                </div>
-            </a>
-        </div>
-    }
-</div>
 @*food item*@
 <h3 style="text-align:center">Trending Foods</h3>
+<div style="text-align:right">
+    <a  asp-action="Index" asp-controller="Product" asp-area="Admin" class="btn  btn-rounded " data-mdb-ripple-color="#ffffff">
+    View All
+
+
+</a>
+</div>
 <div class="row">
-    @foreach (var obj in Model)
+    @foreach (var obj in Model.Take(6))
     {
         <input asp-for="@obj.Id" hidden />
         <input asp-for="@obj.ImageUrl" hidden />
         <div class="__area text-center col-md-4 mb-3">
-            <a href="#" class="__card">
+            <a  class="__card">
                 <i class="la la-heart-o"></i>
-                <img src="@obj.ImageUrl" class="img-fluid __img" />
+                <img src="@obj.ImageUrl" class="img-fluid __img" style="height:200px;width:200px" />
                 <div class="__card_detail">
-                    
-                        <h4 class="d-flex justify-content-around">
-                            @obj.ProductName
 
-                        </h4>
-                   
-                     <div>
-                        @obj.Price.ToString("0.00")
-                     </div>
-                       
+                    <h4 class="d-flex justify-content-around">
+                        @obj.ProductName
+
+                    </h4>
+
                     <div>
-                        
+                      ₹  @obj.Price.ToString("0.00")
+                    </div>
+
+                    <div>
+
                         <p>@obj.Description</p>
                     </div>
-                  <div class="__type">
-                        
+                    <div class="__type">
+
                         <span href="#Pizza">@obj.FoodCatagory.FoodCatagoryType</span>
 
                     </div>
@@ -88,13 +53,72 @@
                         </a>
                     </div>
                     @* <div class="__detail">
-                        <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.RestaurantRating</span>
-                    </div>*@
+                <i class="fa fa-star-o" aria-hidden="true"></i><span>@obj.RestaurantRating</span>
+                </div>*@
                 </div>
             </a>
-        
+
         </div>
     }
 </div>
 
 
+
+
+<h3 style="text-align:center;margin-bottom:1rem">Available Food Types</h3>
+<div style="text-align:right">
+    <a asp-action="Index" asp-controller="Foodcatagory" asp-area="Admin" class="btn  btn-rounded " data-mdb-ripple-color="#ffffff">
+        View All
+
+
+    </a>
+</div>
+
+<div class="row " style="margin-bottom:1rem">
+    @foreach (var obj in Model.Take(3))
+    {
+        <div class="__area text-center col-md-4 mb-3" style="border-radius:50%">
+            <a asp-action="Index" asp-controller="FoodCatagoty" asp-area="Admin" class="__card">
+                <i class="la la-heart-o"></i>
+                @*<img src="https://i.pinimg.com/originals/74/84/4c/74844c4207ec819b6ffaa6291591311e.jpg" class="img-fluid __img" />*@
+                <div class="__card_detail text-left " style="border-radius:70%;padding:20px">
+                    <h4>@obj.FoodCatagory.FoodCatagoryType</h4>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<h3 style="text-align:center;margin-bottom:1rem">Popular Restaurents</h3>
+<div style="text-align:right">
+    <a asp-action="Index" asp-controller="Restaurant" asp-area="Admin" class="btn  btn-rounded " data-mdb-ripple-color="#ffffff">
+        View All
+
+
+    </a>
+</div>
+<div class="row" style="margin-top:3rem">
+    @foreach (var obj in Model.Take(3))
+    {
+        <div class="__area text-center col-md-4 mb-3">
+            <a asp-action="Index" asp-controller="Restaurant" asp-area="Admin" class="__card">
+                <i class="la la-heart-o"></i>
+
+                <div class="__card_detail text-left">
+                    <h4>@obj.Restaurant.RestaurantName</h4>
+
+                    <div class="__type">
+                        
+                        <span href="#Vegetarian">Vegetarian</span>
+
+                        <span  style="background-color:white;color:#6777ef">@obj.Restaurant.Address</span>
+                    </div>
+                    <div class="__detail mt-3" style="background-color:#48c578;width:20%;padding:3px;font-size:8px;text-align:center" >
+                        <i class="fa fa-star-o" style="color:white;font-size:11px" aria-hidden="true"></i><span style="color:white;font-size:11px">@obj.Restaurant.RestaurantRating</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    }
+</div>

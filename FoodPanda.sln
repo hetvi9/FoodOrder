@@ -5,11 +5,11 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPanda", "FoodPanda\FoodPanda.csproj", "{86C40249-9D69-425C-819C-2F29A6CD173C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPanda.DataAccess", "FoodPanda.DataAccess\FoodPanda.DataAccess.csproj", "{38F0E0EA-D245-43D1-83C4-C29876E46F57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPanda.DataAccess", "FoodPanda.DataAccess\FoodPanda.DataAccess.csproj", "{38F0E0EA-D245-43D1-83C4-C29876E46F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPanda.Models", "FoodPanda.Models\FoodPanda.Models.csproj", "{BC5D80CE-0961-4B54-A9D6-ACF0DA914D20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPanda.Models", "FoodPanda.Models\FoodPanda.Models.csproj", "{BC5D80CE-0961-4B54-A9D6-ACF0DA914D20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPanda.Utility", "FoodPanda.Utility\FoodPanda.Utility.csproj", "{A7085CF9-200F-48C4-95CC-15B7A3A4617A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPanda.Utility", "FoodPanda.Utility\FoodPanda.Utility.csproj", "{A7085CF9-200F-48C4-95CC-15B7A3A4617A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

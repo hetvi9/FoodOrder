@@ -15,7 +15,7 @@ namespace FoodPanda.Models
         [Required]
         [DisplayName("Restaurant Name")]
         public string RestaurantName { get; set; }
-        [Required]
+        
         [DisplayName("Restaurant Image")]
         public string RestaurantImage { get; set; }
         [Required]

@@ -4,8 +4,9 @@
 }
 
 <div class="container px-5">
-    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" asp-action="Edit">
+    <form id="contactForm" enctype="multipart/form-data" method="post" asp-action="Edit">
         <input asp-for="RestaurantId" hidden />
+        
         <div class="mb-3">
             <label class="form-label" asp-for="RestaurantName">Restaurant Name</label>
             <input asp-for="RestaurantName" class="form-control" id="restaurantName" type="text" data-sb-validations="required" />
@@ -25,9 +26,10 @@
 
         </div>
         <div class="mb-3">
-            <label class="form-label" asp-for="RestaurantImage">Image</label>
-            <input asp-for="RestaurantImage" class="form-control" id="image" type="file" data-sb-validations="required" />
+            <label class="form-label" asp-for="RestaurantImage">Veg/Non-Veg</label>
+            <input asp-for="RestaurantImage" class="form-control" id="rating" type="text" data-sb-validations="required" />
             <span class="text-danger" asp-validation-for="RestaurantImage"></span>
+
 
         <div class="d-flex">
             <button class="btn btn-primary btn-lg mr-4" id="submitButton" type="submit">Update</button>

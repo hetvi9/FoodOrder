@@ -14,7 +14,7 @@ function loadDataTable() {
         "columns": [
             { "data": "productName", "width": "15%" },
             { "data": "description", "width": "15%" },
-            { "data": "imageUrl", "width": "15%" },
+            /*{ "data": "imageUrl", "width": "15%" },*/
             { "data": "price", "width": "15%" },
             { "data": "restaurant.restaurantName", "width": "15%" },
             { "data": "restaurant.restaurantImage", "width": "15%" },

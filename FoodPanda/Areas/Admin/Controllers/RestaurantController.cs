@@ -2,6 +2,7 @@
 using FoodPanda.DataAccess.Repository.IRepository;
 using FoodPanda.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace FoodPanda.Areas.Admin.Controllers;
     [Area("Admin")]
@@ -9,11 +10,15 @@ namespace FoodPanda.Areas.Admin.Controllers;
     public class RestaurantController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public RestaurantController(IUnitOfWork unitOfWork)
+	private readonly IWebHostEnvironment _hostEnvironment;
+
+	public RestaurantController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
-        }
-        public IActionResult Index()
+		_hostEnvironment = hostEnvironment;
+
+	}
+	public IActionResult Index()
         {
             IEnumerable<Restaurant> objRestaurantList = _unitOfWork.Restaurant.GetAll();
             return View(objRestaurantList);
@@ -61,9 +66,13 @@ namespace FoodPanda.Areas.Admin.Controllers;
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Restaurant obj)
         {
-            if (ModelState.IsValid)
+		
+
+		if (ModelState.IsValid)
             {
-                _unitOfWork.Restaurant.Update(obj);
+			
+
+			_unitOfWork.Restaurant.Update(obj);
                 _unitOfWork.Save();
                 TempData["success"] = "Restaurant updated successfully";
 

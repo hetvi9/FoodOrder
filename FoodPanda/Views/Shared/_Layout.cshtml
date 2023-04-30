@@ -41,14 +41,14 @@
                             </a>
                         </li>
                         <li>
-                            <form class="form-inline mr-auto">
+                           @* <form class="form-inline mr-auto">
                                 <div class="search-element">
                                     <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
                                     <button class="btn" type="submit">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
-                            </form>
+                            </form>*@
                         </li>
                     </ul>
                 </div>
@@ -77,52 +77,28 @@
                     </div>
                     <ul class="sidebar-menu">
                     
-                        <li class="active">
+                        <li >
                             <a asp-action="Index" asp-area="Customer" asp-controller="Home" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
-                        <li class="dropdown">
-                    <a asp-controller="FoodCatagory" asp-area="Admin" asp-action="Index" class=" nav-link">
+                <li>
+                    <a asp-controller="Restaurant" asp-area="Admin" asp-action="Index" class="nav-link"><i data-feather="command"></i><span>Restaurants</span></a>
+
+                </li>
+                        <li >
+                                 <a asp-controller="FoodCatagory" asp-area="Admin" asp-action="Index" class=" nav-link">
                                 <i data-feather="briefcase"></i><span>Food Catagory</span>
                             </a>
                            
                         </li>
-                        <li >
-                            <a asp-controller="Restaurant" asp-area="Admin" asp-action="Index" class="nav-link"><i data-feather="command"></i><span>Restaurants</span></a>
-                           
-                        </li>
+                       
                         <li>
                     <a asp-controller="Product" asp-area="Admin" asp-action="Index" class=" nav-link"><i data-feather="mail"></i><span>Food Item</span></a>
                          
                         </li>
                        
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown">
-                                <i data-feather="copy"></i><span>
-                                    Orders
-                                </span>
-                            </a>
-                          
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Help</span></a>
-                         
-                        </li>
+                       
 
-                        <li class="menu-header">Admin</li>
-
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown">
-                                <i data-feather="shopping-bag"></i><span>Restaurant</span>
-                            </a>
-                          
-                        </li>
-                        <li class="">
-                            <a class="nav-link" asp-action="Index" asp-controller="FoodCatagory">
-                                <i data-feather="file"></i><span>
-                                   Food Catagory
-                                </span>
-                            </a>
-                        </li>
+                        
                 <li class="">
                     <a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Company">
                         <i data-feather="file"></i><span>
@@ -130,11 +106,7 @@
                         </span>
                     </a>
                 </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Food Item</span></a>
-                           </li>
-                      
-                    </ul>
+                        
                 </aside>
             </div>
             <!-- Main Content -->
